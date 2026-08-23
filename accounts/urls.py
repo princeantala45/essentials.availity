@@ -10,7 +10,8 @@ from .views import (
     favorite_toggle,
 )
 
-
+   
+   
 urlpatterns = [
 
     path(
