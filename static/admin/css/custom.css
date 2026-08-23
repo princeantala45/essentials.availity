@@ -18,9 +18,30 @@
     width: 100% !important;
     max-width: 100% !important;
 }
- 
+
 .change-form,
 .change-list {
     width: 100% !important;
     max-width: 100% !important;
+}
+
+
+/* Small logo in Jazzmin sidebar */
+.brand-link .brand-image {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain !important;
+    margin-right: 8px !important;
+    opacity: 1 !important;
+}
+
+
+/* Small logo on Jazzmin login page */
+.login-page .login-logo img,
+.login-page .login-logo a img {
+    width: 80px !important;
+    height: 80px !important;
+    max-width: 80px !important;
+    max-height: 80px !important;
+    object-fit: contain !important;
 }

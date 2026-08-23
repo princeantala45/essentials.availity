@@ -270,15 +270,30 @@ JAZZMIN_UI_TWEAKS = {
 
 STATIC_URL = "/static/"
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_STORAGE = (
     "whitenoise.storage.CompressedManifestStaticFilesStorage"
 )
 
-
 JAZZMIN_SETTINGS = {
-    # your existing settings...
+
+    "site_title": "Spotify Music Admin",
+    "site_header": "Spotify",
+    "site_brand": "Spotify Music",
+
+    "welcome_sign": "Welcome to Spotify Music Admin",
+    "copyright": "Spotify Music",
+
+    "site_icon": "favicon.png",
+    "site_logo": "favicon.png",
 
     "custom_css": "admin/css/custom.css",
+
+    "show_sidebar": True,
+    "navigation_expanded": True,
 }
