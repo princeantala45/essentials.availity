@@ -56,4 +56,5 @@ urlpatterns = [
         favorite_toggle,
         name="favorite_toggle"
     ),
+  
 ]

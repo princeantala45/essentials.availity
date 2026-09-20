@@ -21,7 +21,6 @@ def get_client_ip(request):
 
 @api_view(["POST"])
 def login_view(request):
-
     username = request.data.get("username", "").strip()
     password = request.data.get("password", "")
     device_id = request.data.get("device_id", "")
@@ -49,24 +48,27 @@ def login_view(request):
             status=401
         )
 
-    device = Device.objects.filter(user=user, device_id=device_id).first()
+    # માત્ર device_id થી જ શોધો અથવા નવું બનાવો
+    device, created = Device.objects.get_or_create(
+        device_id=device_id,
+        defaults={
+            "user": user,
+            "device_name": device_name,
+            "browser": browser,
+            "operating_system": operating_system,
+            "ip_address": get_client_ip(request),
+            "status": "pending",
+        }
+    )
 
-    if device is None:
-        device = Device.objects.create(
-            user=user,
-            device_id=device_id,
-            device_name=device_name,
-            browser=browser,
-            operating_system=operating_system,
-            ip_address=get_client_ip(request),
-            status="pending"
-        )
-
+    if created:
         return Response({
             "status": "pending",
             "message": "Please approve your device from the admin panel."
         })
 
+    # જો ડિવાઇસ પહેલેથી મોજૂદ હોય, તો વિગતો અપડેટ કરો
+    device.user = user  # જો યુઝર બદલાયો હોય તો નવો યુઝર લિંક થશે
     device.device_name = device_name
     device.browser = browser
     device.operating_system = operating_system
@@ -84,7 +86,6 @@ def login_view(request):
         "status": "pending",
         "message": "Please approve your device from the admin panel."
     })
-
 
 @api_view(["POST"])
 def signup_view(request):
@@ -412,3 +413,5 @@ def favorite_toggle(request):
         },
         status=201
     )
+    
+    

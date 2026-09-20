@@ -22,8 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-&(u&v&@^(f)uy1&r1y-+4(u43^!$zj%7c(9)103h*6!4fa=u7g'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production!   
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "allmusic-backend.onrender.com",
@@ -143,7 +143,7 @@ MAILERS = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://allmusic45.netlify.app",
+    # "https://essentials-availity-com.netlify.app/",
 
     "http://127.0.0.1:5500",
     "http://localhost:5500",
@@ -153,7 +153,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://allmusic45.netlify.app",
+    "https://essentials-availity-com.netlify.app/",
 
     "http://127.0.0.1:5500",
     "http://localhost:5500",
@@ -224,7 +224,7 @@ JAZZMIN_SETTINGS = {
     "usermenu_links": [
         {
             "name": "All Music Website",
-            "url": "https://allmusic45.netlify.app/",
+            "url": "https://essentials-availity-com.netlify.app/",
             
             "new_window": True,
         },
@@ -282,15 +282,15 @@ STATICFILES_STORAGE = (
 
 JAZZMIN_SETTINGS = {
 
-    "site_title": "Spotify Music Admin",
-    "site_header": "Spotify",
-    "site_brand": "Spotify Music",
+    "site_title": "Raghav Music Admin",
+    "site_header": "Raghav",
+    "site_brand": "Raghav Music",
 
-    "welcome_sign": "Welcome to Spotify Music Admin",
-    "copyright": "Spotify Music",
+    "welcome_sign": "Welcome to Raghav Music Admin",
+    "copyright": "Raghav Music",
 
-    "site_icon": "favicon.png",
-    "site_logo": "favicon.png",
+    "site_icon": "favicon.jpg",
+    "site_logo": "favicon.jpg",
 
     "custom_css": "admin/css/custom.css",
 
