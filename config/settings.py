@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&(u&v&@^(f)uy1&r1y-+4(u43^!$zj%7c(9)103h*6!4fa=u7g
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "allmusic-backend.onrender.com",
+    "https://essentials-availity.onrender.com/",
     "localhost",
     "127.0.0.1",
 ]
