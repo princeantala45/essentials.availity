@@ -11,8 +11,6 @@ from .views import (
 )
 
 
-   
-   
 urlpatterns = [
 
     path(
@@ -56,5 +54,4 @@ urlpatterns = [
         favorite_toggle,
         name="favorite_toggle"
     ),
-  
 ]

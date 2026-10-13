@@ -412,5 +412,3 @@ def favorite_toggle(request):
         },
         status=201
     )
-    
-    
